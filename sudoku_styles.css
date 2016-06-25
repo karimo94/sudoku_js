@@ -28,6 +28,8 @@ table
   margin:1em auto;
   position:absolute;
   background:#FFF;
+  border:thin solid black;
+  border-collapse: collapse;
 }
 /*td 
 {
@@ -46,10 +48,11 @@ td input
   height:30px !important;
   /*width:30px !important;*/
   width:30px;
-  border:1px solid;
+  /*border:1px solid;*/
   text-align:center;
   font-size:22px;
   font-family:"Times New Roman", Times, serif;
+  border:none;
 }
 td input:focus
 {
@@ -61,7 +64,7 @@ td:first-child
 }
 td:nth-child(3n) 
 {
-  border-right:solid blue;
+  border-right:solid black;
 }
 tr:first-child td
 {
@@ -69,7 +72,7 @@ tr:first-child td
 }
 td:nth-child(2n) tr
 {
-	border-top: solid blue;
+	border-top: solid black;
 }
 tr:nth-child(2n)
 {
@@ -77,7 +80,7 @@ tr:nth-child(2n)
 }
 tr:nth-child(3n) td 
 {
-  border-bottom:solid blue;
+  border-bottom:solid black;
 }
 tr:last-child td
 {
