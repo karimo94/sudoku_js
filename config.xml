@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<widget xmlns = "http://www.w3.org/ns/widgets"
+    xmlns:gap = "http://phonegap.com/ns/1.0"
+    id        = "com.karimo.sudoku"
+    version   = "1.0.0">
+
+<name>Sudoku</name>
+
+<description>
+Sudoku game for Android. 
+</description>
+
+<author href="https://www.simpledevcode.wordpress.com" email="karimo94@outlook.com">
+Karim Oumghar
+</author>
+<feature name="http://api.phonegap.com/1.0/network"/>
+
+<icon src="sudoku_icon.png" />
+
+
+</widget>
