@@ -187,12 +187,3 @@ td:last-child
 {
 	border-right:none;
 }
-footer
-{
-	position:fixed;
-	bottom:0px;
-}
-footer input
-{
-	width:100px;
-}

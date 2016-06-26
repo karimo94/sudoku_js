@@ -84,11 +84,19 @@ function checkGame()
 		//first check for correctness based on a solution
 		if(!isOk())
 		{
-			document.getElementById("statusNote").innerHTML = "Something is not right...";
+			setTimeout(function() {
+  				$("#statusNote").fadeOut().empty();
+				document.getElementById("statusNote").innerHTML = "Incorrect...";
+				}, 5000);
+			//document.getElementById("statusNote").innerHTML = "Incorrect...";
 		}
 		else
 		{
-			document.getElementById("statusNote").innerHTML = "Ok!";
+			setTimeout(function() {
+  				$("#statusNote").fadeOut().empty();
+				document.getElementById("statusNote").innerHTML = "Ok!";
+				}, 5000);	
+			//document.getElementById("statusNote").innerHTML = "Ok!";
 		}
 	}
 }
@@ -792,5 +800,18 @@ function loadGame()
 	//use localStorage
 	//display the board
 	board = JSON.parse(localStorage.getItem("board"));
+	clearTable();
+	for(i = 0; i < 9; i++)
+	{
+		for(j = 0; j < 9; j++)
+		{
+			y = table[i].cells;
+			if(board[i][j] > 0)
+			{
+				y[j].children[0].value = board[i][j];
+			}
+		}
+	}
+	editTable();
 }
 /**************************************END OF CODE******************************************/

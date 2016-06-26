@@ -22,111 +22,111 @@ window.addEventListener('orientationchange', function ()
 <header>Sudoku</header>
 <!--<h1>Sudoku</h1>-->
 <input type="button" value="New Game" onclick="newGame()"/>
+<input type="button" value="Save" onclick="saveGame()"/>
+<input type="button" value="Load" onclick="loadGame()"/>
 <input type="button" value="Check" onclick="checkGame()"/>
 <label id="statusNote"></label><br />
 
 <table width="300px" border="1" align="center" id="mainTable">
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
   <tr>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
-    <td><input onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
+    <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
 </table>
-<footer><input type="button" value="Save" onclick="saveGame()"/>
-<input type="button" value="Load" onclick="loadGame()"/></footer>
 </body>
 </html>
