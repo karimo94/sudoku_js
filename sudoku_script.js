@@ -178,14 +178,14 @@ function insertValues()
 	var table = document.getElementById("mainTable").rows;
 	var y;
 	//generate a valid initial sudoku board
-	genNumber();
+	//genNumber();
 	//shift and interchance columns and rows
 	
-	
-	//var b = Math.floor((Math.random() * 12) + 40);
+	fillSudoku(board, 0, 0);
+	var b = Math.floor((Math.random() * 12) + 40);
 	for(i = 0; i < 10; i++)
 	{
-		var s = Math.floor((Math.random() * 6) + 0);
+		var s = Math.floor((Math.random() * 5) + 0);
 		switch(s)
 		{
 			case 1:
@@ -208,21 +208,22 @@ function insertValues()
 				board = swapBigRows(board);
 				break;
 			}
-			case 5:
+			default:
 			{
 				board = transpose(board);
 				break;
 			}
-			default:
-			{
-				board = rowSwap(board);
-				break;
-			}	
+//			default:
+//			{
+//				board = rowSwap(board);
+//				break;
+//			}	
 		}
 	}
 	
 	//keep generating and swapping/shiffling until we have a solveable puzzle
 	//set our solution board
+	
 	for(i = 0; i < 9; i++)
 	{
 		for(j = 0; j < 9; j++)
@@ -401,7 +402,7 @@ function swapBigRows(array)
 	{
 		while (a == b)
 		{
-			b = Math.floor((Math.random() * 3));
+			b = Math.floor((Math.random() * 2));
 		}
 	}
 	var start = indexes[a];//we've chosen a starting big row group
@@ -478,7 +479,7 @@ function swapBigCols(array)
 	{
 		while (a == b)
 		{
-			b = Math.floor((Math.random() * 3));
+			b = Math.floor((Math.random() * 2));
 		}
 	}
 	var start = indexes[a];//we've chosen a starting big row group
@@ -694,5 +695,102 @@ function strikeOutCells(array)
 		}
 	}
 	return array;	
+}
+function isAvailable(array, row, col, num)
+{
+	var rowStart = Math.floor(row / 3) * 3;
+	var colStart = Math.floor(col / 3) * 3;
+	var i, j;
+	for(i=0; i<9; ++i)
+    {
+        if (array[row][i] == num) 
+		{
+			return 0;
+		}
+        if (array[i][col] == num) 
+		{
+			return 0;
+		}
+        if (array[rowStart + (i%3)][colStart + Math.floor(i/3)] == num) 
+		{
+			return 0;
+		}
+    }
+    return 1;
+}
+function fillSudoku(array, row, col)
+{
+	var i;
+    if(row<9 && col<9)
+    {
+        if(array[row][col] != 0)
+        {
+            if((col+1)<9) 
+			{
+				return fillSudoku(array, row, col+1);
+			}
+            else if((row+1)<9) 
+			{
+				return fillSudoku(array, row+1, 0);
+			}
+            else 
+			{
+				return 1;
+			}
+        }
+        else
+        {
+            for(i=0; i<9; ++i)
+            {
+				var x = Math.floor((Math.random() * 9) + 1);
+                if(isAvailable(array, row, col, x))//i+1
+                {
+                    array[row][col] = x;//i+1
+                    if((col+1)<9)
+                    {
+                        if(fillSudoku(array, row, col +1)) 
+						{
+							return 1;
+						}
+                        else 
+						{
+							array[row][col] = 0;
+						}
+                    }
+                    else if((row+1)<9)
+                    {
+                        if(fillSudoku(array, row+1, 0)) 
+						{
+							return 1;
+						}
+                        else 
+						{
+							array[row][col] = 0;
+						}
+                    }
+                    else 
+					{
+						return 1;
+					}
+                }
+            }
+        }
+        return 0;
+    }
+    else 
+	{
+		return 1;
+	}
+}
+function saveGame()
+{
+	//use localStorage
+	localStorage.setItem("board", JSON.stringify(board));
+}
+function loadGame()
+{
+	//use localStorage
+	//display the board
+	board = JSON.parse(localStorage.getItem("board"));
 }
 /**************************************END OF CODE******************************************/
