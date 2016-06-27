@@ -1,94 +1,7 @@
 @charset "utf-8";
 /* sudoku_styles.css */
 /*Styles below for phone screen resolution adjustment*/
-//@media screen and (min-width: 240px)//add font adjustment for labels!
-//{
-//    table
-//	{
-//		width:200px;
-//	}
-//	tr td
-//	{
-//		padding:0px;
-//	}
-//	td input
-//	{
-//  		height:20px !important;
-//  		/*width:30px !important;*/
-//  		width:20px;
-//		/*border:1px solid;*/
-//		text-align:center;
-//		font-size:22px;
-//		font-family:"Times New Roman", Times, serif;
-//		border:none;
-//	}
-//}
-//@media screen and (min-width: 320px)
-//{
-//    table
-//	{
-//		width:300px;
-//	}
-//	tr td
-//	{
-//		padding:0px;
-//	}
-//	td input
-//	{
-//  		height:30px !important;
-//  		/*width:30px !important;*/
-//  		width:30px;
-//		/*border:1px solid;*/
-//		text-align:center;
-//		font-size:22px;
-//		font-family:"Times New Roman", Times, serif;
-//		border:none;
-//	}
-//}
-//@media screen and (min-width: 480px)
-//{
-//    table
-//	{
-//		width:400px;
-//	}
-//	tr td
-//	{
-//		padding:0px;
-//	}
-//	td input
-//	{
-//  		height:40px !important;
-//  		/*width:30px !important;*/
-//  		width:40px;
-//		/*border:1px solid;*/
-//		text-align:center;
-//		font-size:22px;
-//		font-family:"Times New Roman", Times, serif;
-//		border:none;
-//	}
-//}
-//@media screen and (min-width: 768px)
-//{
-//    table
-//	{
-//		width:700px;
-//	}
-//	tr td
-//	{
-//		padding:0px;
-//	}
-//	td input
-//	{
-//  		height:70px !important;
-//  		/*width:30px !important;*/
-//  		width:73px;
-//		/*border:1px solid;*/
-//		text-align:center;
-//		font-size:32px;
-//		font-family:"Times New Roman", Times, serif;
-//		border:none;
-//	}
-//}
+
 html
 {
 	height:100%;background: #1e5799; /* Old browsers */
@@ -186,4 +99,26 @@ tr:last-child td
 td:last-child
 {
 	border-right:none;
+}
+.modal
+{
+	display:none;/*hidden by default*/
+	position: fixed;
+	width:300px;
+	height:300px;
+	overflow:auto;
+	background-color:white;
+}
+.modal header
+{
+	color:white;
+	background-color:red;
+}
+/* The Close Button */
+.close 
+{
+    color: #fff;
+    float: right;
+    font-size: 30px;
+    font-weight: bold;
 }

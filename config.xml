@@ -17,5 +17,8 @@ Karim Oumghar
 
 <icon src="sudoku_icon.png" />
 
+<gap:plugin name="org.apache.cordova.splashscreen" />
+<gap:splash src="splashscreen.png"/>
+<preference name="SplashScreenDelay" value="3500" />
 
 </widget>

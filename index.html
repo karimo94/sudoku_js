@@ -15,17 +15,142 @@ window.addEventListener('orientationchange', function ()
     }
 });
 </script>
-
-
+<style type="text/css">
+@media screen and (min-width: 240px)
+{
+    table
+	{
+		width:200px;
+	}
+	tr td
+	{
+		padding:0px;
+	}
+	td input
+	{
+  		height:20px !important;
+  		/*width:30px !important;*/
+  		width:20px;
+		/*border:1px solid;*/
+		text-align:center;
+		font-size:22px;
+		font-family:"Times New Roman", Times, serif;
+		border:none;
+	}
+	.modal
+	{
+	  display:none;/*hidden by default*/
+	  position: fixed;
+	  width:200px;
+	  height:200px;
+	  overflow:auto;
+	  background-color:white;
+	}
+}
+@media screen and (min-width: 320px)
+{
+    table
+	{
+		width:300px;
+	}
+	tr td
+	{
+		padding:0px;
+	}
+	td input
+	{
+  		height:30px !important;
+  		/*width:30px !important;*/
+  		width:30px;
+		/*border:1px solid;*/
+		text-align:center;
+		font-size:22px;
+		font-family:"Times New Roman", Times, serif;
+		border:none;
+	}
+	.modal
+	{
+	  display:none;/*hidden by default*/
+	  position: fixed;
+	  width:300px;
+	  height:300px;
+	  overflow:auto;
+	  background-color:white;
+	}
+}
+@media screen and (min-width: 480px)
+{
+    table
+	{
+		width:400px;
+	}
+	tr td
+	{
+		padding:0px;
+	}
+	td input
+	{
+  		height:40px !important;
+  		/*width:30px !important;*/
+  		width:40px;
+		/*border:1px solid;*/
+		text-align:center;
+		font-size:22px;
+		font-family:"Times New Roman", Times, serif;
+		border:none;
+	}
+	.modal
+	{
+	  display:none;/*hidden by default*/
+	  position: fixed;
+	  width:400px;
+	  height:400px;
+	  overflow:auto;
+	  background-color:white;
+	}
+}
+@media screen and (min-width: 768px)
+{
+    table
+	{
+		width:700px;
+	}
+	tr td
+	{
+		padding:0px;
+	}
+	td input
+	{
+  		height:70px !important;
+  		/*width:30px !important;*/
+  		width:75px;
+		/*border:1px solid;*/
+		text-align:center;
+		font-size:32px;
+		font-family:"Times New Roman", Times, serif;
+		border:none;
+	}
+	.modal
+	{
+	  display:none;/*hidden by default*/
+	  position: fixed;
+	  width:700px;
+	  height:700px;
+	  overflow:auto;
+	  background-color:white;
+	}
+}
+</style>
 </head>
 <body>
 <header>Sudoku</header>
 <!--<h1>Sudoku</h1>-->
-<input type="button" value="New Game" onclick="newGame()"/>
+<input type="button" value="New" onclick="newGame()"/>
+<input type="button" value="Help" id="helpBtn" onclick="showHelp()" />
 <input type="button" value="Save" onclick="saveGame()"/>
 <input type="button" value="Load" onclick="loadGame()"/>
-<input type="button" value="Check" onclick="checkGame()"/>
-<label id="statusNote"></label><br />
+<input type="button" value="Check" onclick="setTimeout(checkGame(),5000);"/>
+<label id="statusNote"></label> <br/>
 
 <table width="300px" border="1" align="center" id="mainTable">
   <tr>
@@ -129,4 +254,18 @@ window.addEventListener('orientationchange', function ()
   </tr>
 </table>
 </body>
+<div id="helpDiag" class="modal">
+<header>Sudoku<span class="close">x</span></header>
+
+<p><strong>Objective:</strong> A Sudoku puzzle is defined as a logic-based, number-placement puzzle. The objective is to fill a 9×9 grid with digits in such a way that each column, each row, and each of the nine 3×3 grids that make up the larger 9×9 grid contains all of the digits from 1 to 9.</p>
+<p>To start a new game, tap New.</p>
+<p>To check your progress in the current game, tap Check.</p>
+<p>To save your current game, tap Save.</p>
+<p>To load previously saved game, tap Load. The most current save will be loaded.</p>
+<br/>
+<p><strong>About/Contact:</strong></p>
+<p>Developer: Karim Oumghar</p>
+<p>Version 1.0.0</p>
+<p>Website: <a href="https://www.simpledevcode.wordpress.com">www.simpledevcode.wordpress.com</a></p>
+</div>
 </html>
