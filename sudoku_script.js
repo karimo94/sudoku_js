@@ -782,17 +782,31 @@ function fillSudoku(array, row, col)
 function saveGame()
 {
 	//use localStorage
-	localStorage.setItem(JSON.stringify(board),board);
-	localStorage.setItem(JSON.stringify(solnBoard),solnBoard);
+	localStorage.clear();
+	localStorage.setItem("gameBoard", JSON.stringify(board));
+	localStorage.setItem("solution", JSON.stringify(solnBoard));
 }
 function loadGame()
 {
 	//use localStorage
 	//display the board
-	board = JSON.parse(localStorage.getItem(board));
-	solnBoard = JSON.parse(localStorage.getItem(solnBoard));
+	//clear the table
+	
+	board = JSON.parse(localStorage.getItem("gameBoard"));
+	solnBoard = JSON.parse(localStorage.getItem("solution"));
 	Object.seal(solnBoard);
-	clearTable();
+	
+	var table = document.getElementById("mainTable").rows;
+	var y;
+	//clear table first
+	for(i = 0; i < 9; i++)
+	{
+		for(j = 0; j < 9; j++)
+		{
+			y = table[i].cells;
+			y[j].children[0].value = "";
+		}
+	}
 	for(i = 0; i < 9; i++)
 	{
 		for(j = 0; j < 9; j++)
