@@ -5,6 +5,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Sudoku Puzzle</title>
 <link href="sudoku_styles.css" rel="stylesheet" type="text/css" />
+
 <script type="text/javascript" src="sudoku_script.js"></script>
 <script type="text/javascript">
 window.addEventListener('orientationchange', function ()
@@ -18,6 +19,10 @@ window.addEventListener('orientationchange', function ()
 <style type="text/css">
 @media screen and (min-width: 240px)
 {
+	h1
+	{
+		font-size:100%;
+	}
     table
 	{
 		width:200px;
@@ -45,6 +50,15 @@ window.addEventListener('orientationchange', function ()
 	  height:200px;
 	  overflow:auto;
 	  background-color:white;
+	}
+	input[type=button]
+	{
+		font-size:9px;
+		height:18px;
+	}
+	label
+	{
+		font-size:10px;
 	}
 }
 @media screen and (min-width: 320px)
@@ -77,6 +91,16 @@ window.addEventListener('orientationchange', function ()
 	  overflow:auto;
 	  background-color:white;
 	}
+	input[type=button]
+	{
+		font-size:12px;
+		height:24px;
+		
+	}
+	label
+	{
+		font-size:14px;
+	}
 }
 @media screen and (min-width: 480px)
 {
@@ -92,7 +116,7 @@ window.addEventListener('orientationchange', function ()
 	{
   		height:40px !important;
   		/*width:30px !important;*/
-  		width:40px;
+  		width:45px;
 		/*border:1px solid;*/
 		text-align:center;
 		font-size:22px;
@@ -107,6 +131,16 @@ window.addEventListener('orientationchange', function ()
 	  height:400px;
 	  overflow:auto;
 	  background-color:white;
+	}
+	input[type=button]
+	{
+		font-size:16px;
+		height:32px;
+		margin-top:5px;
+	}
+	label
+	{
+		font-size:16px;
 	}
 }
 @media screen and (min-width: 768px)
@@ -139,20 +173,32 @@ window.addEventListener('orientationchange', function ()
 	  overflow:auto;
 	  background-color:white;
 	}
+	input[type=button]
+	{
+		font-size:20px;
+		height:40px;
+		margin-top:5px;
+	}
+	label
+	{
+		font-size:24px;
+	}
 }
 </style>
 </head>
-<body>
-<header>Sudoku</header>
-<!--<h1>Sudoku</h1>-->
-<input type="button" value="New" onclick="newGame()"/>
-<input type="button" value="Help" id="helpBtn" onclick="showHelp()" />
-<input type="button" value="Save" onclick="saveGame()"/>
-<input type="button" value="Load" onclick="loadGame()"/>
-<input type="button" value="Check" onclick="setTimeout(checkGame(),5000);"/>
+<body style="background-color:#333">
+<div class="mdl-layout-title">
+<header style="background-color:#09C">
+Sudoku
+</header>
+<input type="button" value="New" onclick="newGame()" style="margin-right:-5px"/>
+<input type="button" value="Help" id="helpBtn" onclick="showHelp()" style="margin-right:-5px"/>
+<input type="button" value="Save" onclick="saveGame()" style="margin-right:-5px"/>
+<input type="button" value="Load" onclick="loadGame()" style="margin-right:-5px"/>
+<input type="button" value="Check" onclick="checkGame()" style="margin-right:-5px"/>
 <label id="statusNote"></label> <br/>
 
-<table width="300px" border="1" align="center" id="mainTable">
+<table width="300px" border="1" align="center" id="mainTable" >
   <tr>
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
@@ -253,6 +299,8 @@ window.addEventListener('orientationchange', function ()
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
 </table>
+</div>
+<footer style="background-color:#FFF"></footer>
 </body>
 <div id="helpDiag" class="modal">
 <header>Sudoku<span class="close">x</span></header>
@@ -265,7 +313,8 @@ window.addEventListener('orientationchange', function ()
 <br/>
 <p><strong>About/Contact:</strong></p>
 <p>Developer: Karim Oumghar</p>
-<p>Version 1.0.0</p>
+<p>Version 1.1</p>
 <p>Website: <a href="https://www.simpledevcode.wordpress.com">www.simpledevcode.wordpress.com</a></p>
 </div>
+
 </html>

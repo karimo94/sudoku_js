@@ -90,6 +90,7 @@ function checkGame()
 		else
 		{
 			document.getElementById("statusNote").innerHTML = "Ok";
+			
 			//document.getElementById("statusNote").innerHTML = "Ok!";
 		}
 	}
