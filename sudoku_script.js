@@ -31,6 +31,10 @@ var undefined = 0;//to find blank cells
 var parentOfInput;//to get column index
 var parentOfTd;//to get row index
 var tableRow, tableCol;//store the row and column
+var ex = "✘";
+var checkMark = "✓";
+var error = ex.fontcolor("#AA0114");
+var goodGame = checkMark.fontcolor("green");
 /******************************************************************************/
 
 
@@ -73,6 +77,7 @@ function returnParent(x)
 }
 function checkGame()
 {
+	
 	if(isDone())//check the entire board for errors in entries
 	{
 		document.getElementById("statusNote").innerHTML = "Solved &#10004;";
@@ -84,12 +89,12 @@ function checkGame()
 		//first check for correctness based on a solution
 		if(!isOk())
 		{
-			var x = document.getElementById('statusNote').innerHTML = "Problem!";
+			document.getElementById('statusNote').innerHTML = error;
 			//document.getElementById("statusNote").innerHTML = "Incorrect...";
 		}
 		else
 		{
-			document.getElementById("statusNote").innerHTML = "Ok";
+			document.getElementById("statusNote").innerHTML = goodGame;
 			
 			//document.getElementById("statusNote").innerHTML = "Ok!";
 		}

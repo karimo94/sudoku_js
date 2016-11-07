@@ -7,6 +7,8 @@
 <link href="sudoku_styles.css" rel="stylesheet" type="text/css" />
 
 <script type="text/javascript" src="sudoku_script.js"></script>
+
+
 <script type="text/javascript">
 window.addEventListener('orientationchange', function ()
 {
@@ -15,6 +17,7 @@ window.addEventListener('orientationchange', function ()
         document.getElementsByTagName('body').style.transform = "rotate(90deg)";
     }
 });
+
 </script>
 <style type="text/css">
 @media screen and (min-width: 240px)
@@ -25,7 +28,7 @@ window.addEventListener('orientationchange', function ()
 	}
     table
 	{
-		width:200px;
+		width:230px;
 	}
 	tr td
 	{
@@ -33,9 +36,9 @@ window.addEventListener('orientationchange', function ()
 	}
 	td input
 	{
-  		height:20px !important;
+  		height:21px !important;
   		/*width:30px !important;*/
-  		width:20px;
+  		width:21px;
 		/*border:1px solid;*/
 		text-align:center;
 		font-size:22px;
@@ -50,6 +53,7 @@ window.addEventListener('orientationchange', function ()
 	  height:200px;
 	  overflow:auto;
 	  background-color:white;
+	  margin-top:-200px
 	}
 	input[type=button]
 	{
@@ -65,7 +69,7 @@ window.addEventListener('orientationchange', function ()
 {
     table
 	{
-		width:300px;
+		width:315px;
 	}
 	tr td
 	{
@@ -73,9 +77,9 @@ window.addEventListener('orientationchange', function ()
 	}
 	td input
 	{
-  		height:30px !important;
+  		height:31px !important;
   		/*width:30px !important;*/
-  		width:30px;
+  		width:31px;
 		/*border:1px solid;*/
 		text-align:center;
 		font-size:22px;
@@ -95,7 +99,7 @@ window.addEventListener('orientationchange', function ()
 	{
 		font-size:12px;
 		height:24px;
-		
+		margin-top:25px;
 	}
 	label
 	{
@@ -106,7 +110,8 @@ window.addEventListener('orientationchange', function ()
 {
     table
 	{
-		width:400px;
+	width: 475px;
+	height:475px;
 	}
 	tr td
 	{
@@ -114,9 +119,9 @@ window.addEventListener('orientationchange', function ()
 	}
 	td input
 	{
-  		height:40px !important;
+  		height:49px !important;
   		/*width:30px !important;*/
-  		width:45px;
+  		width:49px;
 		/*border:1px solid;*/
 		text-align:center;
 		font-size:22px;
@@ -136,7 +141,7 @@ window.addEventListener('orientationchange', function ()
 	{
 		font-size:16px;
 		height:32px;
-		margin-top:5px;
+		margin-top:85px;
 	}
 	label
 	{
@@ -147,7 +152,8 @@ window.addEventListener('orientationchange', function ()
 {
     table
 	{
-		width:700px;
+		width:660px;
+		height:660px;
 	}
 	tr td
 	{
@@ -157,7 +163,7 @@ window.addEventListener('orientationchange', function ()
 	{
   		height:70px !important;
   		/*width:30px !important;*/
-  		width:75px;
+  		width:70px;
 		/*border:1px solid;*/
 		text-align:center;
 		font-size:32px;
@@ -178,6 +184,7 @@ window.addEventListener('orientationchange', function ()
 		font-size:20px;
 		height:40px;
 		margin-top:5px;
+		margin-left:40px;
 	}
 	label
 	{
@@ -186,17 +193,12 @@ window.addEventListener('orientationchange', function ()
 }
 </style>
 </head>
-<body style="background-color:#333">
+<body style="background-image:url(wood_tile.jpg)">
 <div class="mdl-layout-title">
-<header style="background-color:#09C">
-Sudoku
+<header>
+S  U  D  O  K  U
 </header>
-<input type="button" value="New" onclick="newGame()" style="margin-right:-5px"/>
-<input type="button" value="Help" id="helpBtn" onclick="showHelp()" style="margin-right:-5px"/>
-<input type="button" value="Save" onclick="saveGame()" style="margin-right:-5px"/>
-<input type="button" value="Load" onclick="loadGame()" style="margin-right:-5px"/>
-<input type="button" value="Check" onclick="checkGame()" style="margin-right:-5px"/>
-<label id="statusNote"></label> <br/>
+
 
 <table width="300px" border="1" align="center" id="mainTable" >
   <tr>
@@ -300,8 +302,6 @@ Sudoku
   </tr>
 </table>
 </div>
-<footer style="background-color:#FFF"></footer>
-</body>
 <div id="helpDiag" class="modal">
 <header>Sudoku<span class="close">x</span></header>
 
@@ -313,8 +313,19 @@ Sudoku
 <br/>
 <p><strong>About/Contact:</strong></p>
 <p>Developer: Karim Oumghar</p>
-<p>Version 1.1</p>
+<p>Version 1.2</p>
 <p>Website: <a href="https://www.simpledevcode.wordpress.com">www.simpledevcode.wordpress.com</a></p>
 </div>
+<input type="button" class="btn gradient" value="New" onclick="newGame()" style="margin-right:5px"/>
+<input type="button" class="btn gradient" value="Help" id="helpBtn" onclick="showHelp()" style="margin-right:5px"/>
+<input type="button" class="btn gradient" value="Save" onclick="saveGame()" style="margin-right:5px"/>
+<input type="button" class="btn gradient" value="Load" onclick="loadGame()" style="margin-right:5px"/>
+<input type="button" class="btn gradient" value="Check" onclick="checkGame()" style="margin-right:5px"/>
+
+<label id="statusNote" style="font-size:45px font-style:oblique"></label> <br/>
+<footer style="background-color:#FFF"></footer>
+</body>
+
 
 </html>
+
