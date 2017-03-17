@@ -77,7 +77,6 @@ function returnParent(x)
 }
 function checkGame()
 {
-	
 	if(isDone())//check the entire board for errors in entries
 	{
 		document.getElementById("statusNote").innerHTML = "Solved &#10004;";
@@ -98,6 +97,11 @@ function checkGame()
 			
 			//document.getElementById("statusNote").innerHTML = "Ok!";
 		}
+	    $('#statusNote').fadeTo(3000, 0, function () {
+    $(this).delay(3000);
+    $(this).html('');
+    $(this).fadeTo(100, 1);
+	});
 	}
 }
 function clearTable()
@@ -791,6 +795,24 @@ function saveGame()
 	localStorage.clear();
 	localStorage.setItem("gameBoard", JSON.stringify(board));
 	localStorage.setItem("solution", JSON.stringify(solnBoard));
+	
+	//get current date time and save it
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+	
+	var hr = today.getHours();
+	var mins = today.getMinutes();
+	var ss = today.getSeconds();
+	if(dd<10){
+		dd='0'+dd;
+	} 
+	if(mm<10){
+		mm='0'+mm;
+	} 
+	var today = dd+'/'+mm+'/'+yyyy + "  " + hr+":"+mins+":"+ss;
+	localStorage.setItem("saveTime", today);
 }
 function loadGame()
 {
@@ -825,36 +847,12 @@ function loadGame()
 		}
 	}
 	editTable();
-}
-function showHelp()
-{
-	// Get the button that opens the modal
-	//var btn = document.getElementById('helpBtn');
 	
-	var modal = document.getElementById('helpDiag');
-
-	// Get the <span> element that closes the modal
-	var span = document.getElementsByClassName("close")[0];
-
-	// When the user clicks on the button, open the modal
-	/*btn.onclick = function() 
+	if(board != null)
 	{
-    	
-	}*/
-	modal.style.display = "block";
-	// When the user clicks on <span> (x), close the modal
-	span.onclick = function() 
-	{
-    	modal.style.display = "none";
-	}
-
-	// When the user clicks anywhere outside of the modal, close it
-	window.onclick = function(event) 
-	{
-    	if (event.target == modal) 
-		{
-        	modal.style.display = "none";
-    	}
+		var lastSave = JSON.parse(localStorage.getItem("saveTime"));
+		document.getElementById('footerText').innerHTML = "Game saved from: " + lastSave;
 	}
 }
+
 /**************************************END OF CODE******************************************/

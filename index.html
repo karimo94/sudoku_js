@@ -1,14 +1,154 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html> 
+<html>
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Sudoku Puzzle</title>
-<link href="sudoku_styles.css" rel="stylesheet" type="text/css" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width" />
+<title>Sudoku</title>
+<link href="jquery-mobile/jquery.mobile.theme-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="jquery-mobile/jquery.mobile.structure-1.0.min.css" rel="stylesheet" type="text/css"/>
+<link href="sudoku_styles.css" rel="stylesheet" type="text/css"/>
+<script src="jquery-mobile/jquery-1.6.4.min.js" type="text/javascript"></script>
+<script src="jquery-mobile/jquery.mobile-1.0.1.min.js" type="text/javascript"></script>
+<script src="sudoku_script.js" type="text/javascript"></script>
+<script src="fastclick.js" type="text/javascript"></script>
+</head> 
+<style type="text/css">
+body
+{
+	/*background: url(128.jpg);*/
+    background-repeat:repeat;
+    background-position:relative;
+    background-attachment:tile;
+    background-size:default;
+}
+.ui-page 
+{
+    background-image:url(wood_tile.jpg);
+}
 
-<script type="text/javascript" src="sudoku_script.js"></script>
+.ui-listview .ui-li-icon
+{
+	margin-left:-5px;
+}
+
+.ui-listview .ui-li
+{
+	height:60px;
+}
 
 
+#page1 img
+{
+	margin:auto;
+	display:block;
+	margin-top:30px;
+}
+#page3
+{
+	font-family:"Rockwell", Arial, Helvetica, sans-serif;
+	font-weight:bold;
+}
+#mainMenu li
+{
+	display:block;
+	margin:20px;
+	/*margin-top:50px;*/
+}
+#mainMenu a
+{
+	text-align:center;
+	margin-top:50px;
+	height:50px;
+}
+#aboutPageContent
+{
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
+@media screen and (min-width: 240px)
+{
+	table
+	{
+		width:100px;
+		height:100px;
+	}
+	td input
+	{
+	  height:10px !important;
+	  width:10px !important;
+	
+	  /*border:1px solid;*/
+	  text-align:center;
+	  font-size:22px;
+	  font-family:"Times New Roman", Times, serif;
+	  border:none;
+	}
+}
+
+@media screen and (min-width: 320px)
+{
+	table
+	{
+		width:180px;
+		height:180px;
+	}
+	td input
+	{
+	  height:18px !important;
+	  width:18px !important;
+	
+	  /*border:1px solid;*/
+	  text-align:center;
+	  font-size:22px;
+	  font-family:"Times New Roman", Times, serif;
+	  border:none;
+	}
+}
+@media screen and (min-width: 480px)
+{
+	table
+	{
+		width:350px;
+		height:350px;
+	}
+	td input
+	{
+	  height:35px !important;
+	  width:35px !important;
+	
+	  /*border:1px solid;*/
+	  text-align:center;
+	  font-size:22px;
+	  font-family:"Times New Roman", Times, serif;
+	  border:none;
+	}
+}
+@media screen and (min-width: 768px)
+{
+	table
+	{
+		width:500px;
+		height:500px;
+	}
+	td input
+	{
+	  height:50px !important;
+	  width:50px !important;
+	
+	  /*border:1px solid;*/
+	  text-align:center;
+	  font-size:22px;
+	  font-family:"Times New Roman", Times, serif;
+	  border:none;
+	}
+}
+</style>
+<script type="text/javascript">
+        $(function () {
+            FastClick.attach(document.body);
+            
+        });
+</script>
 <script type="text/javascript">
 window.addEventListener('orientationchange', function ()
 {
@@ -19,188 +159,33 @@ window.addEventListener('orientationchange', function ()
 });
 
 </script>
-<style type="text/css">
-@media screen and (min-width: 240px)
-{
-	h1
-	{
-		font-size:100%;
-	}
-    table
-	{
-		width:230px;
-	}
-	tr td
-	{
-		padding:0px;
-	}
-	td input
-	{
-  		height:21px !important;
-  		/*width:30px !important;*/
-  		width:21px;
-		/*border:1px solid;*/
-		text-align:center;
-		font-size:22px;
-		font-family:"Times New Roman", Times, serif;
-		border:none;
-	}
-	.modal
-	{
-	  display:none;/*hidden by default*/
-	  position: fixed;
-	  width:200px;
-	  height:200px;
-	  overflow:auto;
-	  background-color:white;
-	  margin-top:-200px
-	}
-	input[type=button]
-	{
-		font-size:9px;
-		height:18px;
-	}
-	label
-	{
-		font-size:10px;
-	}
-}
-@media screen and (min-width: 320px)
-{
-    table
-	{
-		width:315px;
-	}
-	tr td
-	{
-		padding:0px;
-	}
-	td input
-	{
-  		height:31px !important;
-  		/*width:30px !important;*/
-  		width:31px;
-		/*border:1px solid;*/
-		text-align:center;
-		font-size:22px;
-		font-family:"Times New Roman", Times, serif;
-		border:none;
-	}
-	.modal
-	{
-	  display:none;/*hidden by default*/
-	  position: fixed;
-	  width:300px;
-	  height:300px;
-	  overflow:auto;
-	  background-color:white;
-	}
-	input[type=button]
-	{
-		font-size:12px;
-		height:24px;
-		margin-top:25px;
-	}
-	label
-	{
-		font-size:14px;
-	}
-}
-@media screen and (min-width: 480px)
-{
-    table
-	{
-	width: 475px;
-	height:475px;
-	}
-	tr td
-	{
-		padding:0px;
-	}
-	td input
-	{
-  		height:49px !important;
-  		/*width:30px !important;*/
-  		width:49px;
-		/*border:1px solid;*/
-		text-align:center;
-		font-size:22px;
-		font-family:"Times New Roman", Times, serif;
-		border:none;
-	}
-	.modal
-	{
-	  display:none;/*hidden by default*/
-	  position: fixed;
-	  width:400px;
-	  height:400px;
-	  overflow:auto;
-	  background-color:white;
-	}
-	input[type=button]
-	{
-		font-size:16px;
-		height:32px;
-		margin-top:85px;
-	}
-	label
-	{
-		font-size:16px;
-	}
-}
-@media screen and (min-width: 768px)
-{
-    table
-	{
-		width:660px;
-		height:660px;
-	}
-	tr td
-	{
-		padding:0px;
-	}
-	td input
-	{
-  		height:70px !important;
-  		/*width:30px !important;*/
-  		width:70px;
-		/*border:1px solid;*/
-		text-align:center;
-		font-size:32px;
-		font-family:"Times New Roman", Times, serif;
-		border:none;
-	}
-	.modal
-	{
-	  display:none;/*hidden by default*/
-	  position: fixed;
-	  width:700px;
-	  height:700px;
-	  overflow:auto;
-	  background-color:white;
-	}
-	input[type=button]
-	{
-		font-size:20px;
-		height:40px;
-		margin-top:5px;
-		margin-left:40px;
-	}
-	label
-	{
-		font-size:24px;
-	}
-}
-</style>
-</head>
-<body style="background-image:url(wood_tile.jpg)">
-<div class="mdl-layout-title">
-<header>
-S  U  D  O  K  U
-</header>
+<body> 
 
+<div data-role="page" id="page1" data-theme="b">
+	<div data-role="header">
+		<h1 style="font-size:36px;">Sudoku</h1>
+    </div>
+    <img src="singlesudoku.png" width="235" height="219"> 
+	<div data-role="content" id="mainMenu">	
+		<ul  data-role="listview" >
+			<a href="#page2" data-role="button" onClick="newGame()" data-icon="arrow-r">New Game</a>
+            <a href="#page2" data-role="button" onClick="loadGame()" data-icon="forward">Continue</a></li>
+			<a href="#page3" data-role="button" data-icon="info" >Help/About</a>
+		</ul>		
+	</div>
+	
+</div>
 
-<table width="300px" border="1" align="center" id="mainTable" >
+<div data-role="page" id="page2">
+	<div data-role="header">
+    <a href="#" data-role="button" onClick="window.history.back();  saveGame();" data-icon="arrow-l" data-direction="reverse" data-transition="none" >Back</a>
+    
+    <a href="#" data-role="button" data-icon="check"  data-transition="none" onClick="checkGame()">Check</a>
+    
+		<h1>Sudoku</h1>
+	</div>
+	<div data-role="content">	
+		<table width="300px" border="1" align="center" id="mainTable" >
   <tr>
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
@@ -301,31 +286,38 @@ S  U  D  O  K  U
     <td><input type="number" onkeyup="returnParent(this); insertToArray(value);" size="1" maxlength="1" /></td>
   </tr>
 </table>
-</div>
-<div id="helpDiag" class="modal">
-<header>Sudoku<span class="close">x</span></header>
 
-<p><strong>Objective:</strong> A Sudoku puzzle is defined as a logic-based, number-placement puzzle. The objective is to fill a 9×9 grid with digits in such a way that each column, each row, and each of the nine 3×3 grids that make up the larger 9×9 grid contains all of the digits from 1 to 9.</p>
-<p>To start a new game, tap New.</p>
-<p>To check your progress in the current game, tap Check.</p>
-<p>To save your current game, tap Save.</p>
-<p>To load previously saved game, tap Load. The most current save will be loaded.</p>
-<br/>
-<p><strong>About/Contact:</strong></p>
-<p>Developer: Karim Oumghar</p>
-<p>Version 1.2</p>
+<div id="gameStatusDiv" style="margin: 0 auto;" align="center">
+<label id="statusNote" style="font-size:45px; font-style:oblique;"></label>
+</div>	
+
+	</div>
+<!--    	<div data-role="footer" id="gameFooter">
+			<h4 id="footerText">asdsadas</h4>
+		</div>-->
+</div>
+
+
+<div data-role="page" id="page3">
+	<div data-role="header"><a href="#" data-role="button" onClick="window.history.back()" data-icon="arrow-l" data-direction="reverse" data-transition="none">Back</a>
+		<h1>Help/About</h1>
+	</div>
+	<div data-role="content" id="aboutPageContent">	
+		<p>Developer: Karim Oumghar</p>
+<p>Version 1.3</p>
 <p>Website: <a href="https://www.simpledevcode.wordpress.com">www.simpledevcode.wordpress.com</a></p>
-</div>
-<input type="button" class="btn gradient" value="New" onclick="newGame()" style="margin-right:5px"/>
-<input type="button" class="btn gradient" value="Help" id="helpBtn" onclick="showHelp()" style="margin-right:5px"/>
-<input type="button" class="btn gradient" value="Save" onclick="saveGame()" style="margin-right:5px"/>
-<input type="button" class="btn gradient" value="Load" onclick="loadGame()" style="margin-right:5px"/>
-<input type="button" class="btn gradient" value="Check" onclick="checkGame()" style="margin-right:5px"/>
 
-<label id="statusNote" style="font-size:45px font-style:oblique"></label> <br/>
-<footer style="background-color:#FFF"></footer>
+	<br/>
+    <hr/>
+    <p><strong>Objective:</strong> Fill a 9×9 grid with digits in such a way that each column, each row, and each of the nine 3×3 grids that make up the larger 9×9 grid contains all of the digits from 1 to 9. The difficulty of the puzzles varies.</p>
+<p>To start a new game, tap New.</p>
+<p>Your current game will be automatically saved when you click 'Back' button.</p>
+<p>To check your progress in the current game, tap the Check "✓" in the upper right corner. A small message below the grid will tell you if the game has an error.</p>
+<p>To load previously saved game, tap Continue. The most current game will be loaded.</p>
+	</div>
+	</div>
+
+
+
 </body>
-
-
 </html>
-
